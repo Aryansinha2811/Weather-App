@@ -1,6 +1,7 @@
 const options = {
     method: 'GET',
     headers: {
+        // I can Only call this API 3000 times in a Month, ( I've Already Called it 200 times ) use it carefully
         'X-RapidAPI-Key': '5eb3f475aemsh69bae14434ff44ep193820jsna4a8564fade2',
         'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
     }
