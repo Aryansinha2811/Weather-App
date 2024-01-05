@@ -1,0 +1,104 @@
+<!-- This site is not Fully Responsive Yet !!  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="w-full h-[1340px] mr-[40px]  ml-[-1px] sm:h-[1340px] md:h-[1500px] lg:h-[1316px] md:w-[1310px] bg-cover bg-center bg-no-repeat"
+style ="background-image: url('/dist/Image/Background.jpg');">
+
+                <!-- This is a background Image Link  -->
+<!-- https://images.pexels.com/photos/33545/sunrise-phu-quoc-island-ocean.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2 -->
+
+
+            <!-- Navbar goes Here  -->
+        <nav class=" bg-slate-900 flex items-center justify-between px-1 opacity-90 small:w-[875px] w-[445px] h-[80px] sm:max-md:w-[961px] md:max-lg:w-[1520px] lg:w-[1500px] "
+        class="responsive" >
+
+            <!-- Weather Forecast Icon Here -->
+            <div class="mx-5 md:m-6 md:mr-[50px] text-white font-semibold hover:font-bold hover:cursor-pointer">Weather <br>Forecast ⛅</div>
+
+            <!-- List Items Here  -->
+            <ul class=" text-white flex text-wrap items-center md:mx-4 md:my-4">
+
+                <li class="mx-[20px] hover:bg-purple-500 hover:border-2 cursor-pointer hover:rounded-xl hover:px-2 hover:py-1 hover:font-semibold">Home</li>
+
+                <li class="mx-[20px] hover:bg-purple-500 hover:border-2 cursor-pointer hover:rounded-xl hover:px-2 hover:py-1 hover:font-semibold">About_us</li>
+
+                <li class="mx-[20px] hover:bg-purple-500 hover:border-2 cursor-pointer hover:rounded-xl hover:px-2 hover:py-1 hover:font-semibold">FAQs</li>
+            </ul>
+
+            <!-- Login / Sign up Button Here  -->
+            <div class="text-white mx-[10px] hidden md:mr-[90px] md:block px-2 py-2 bg-purple-500 font-bold rounded-xl cursor-pointer hover:bg-purple-700 ">Login/Sign up</div>
+
+            <!-- Hamburger Icon Here  -->
+            <div class="md:hidden">
+                    <a class="text-4xl mx-4 my-4 px-2 py-2" href="#">&#8801;</a>
+            </div>
+
+        </nav>
+            <!-- Navbar Ends Here  -->
+
+            <!-- Weather Of the Input  -->
+            <div class="flex items-center justify-center font-bold mt-[25px] 
+            ml-[180px] small:ml-[245px] sm:ml-[125px] w-full h-10" >
+                <h1 class="text-slate-800 text-2xl sm:text-3xl lg:text-4xl">Weather of <span id="cityName"></span>  is</h1>
+            </div>
+            
+
+            <!-- Weather Forecast Search Icon Here  -->
+            <div class="flex justify-center w-[325px] ml-[125px] mt-[32px] mb-[60px]  sm:ml-[245px] md:ml-[510px] lg:ml-[560px] bg-white rounded-2xl">
+                <input 
+                id="cityInput"
+                type="text"
+                placeholder="Enter Your City Here"
+                class="w-full border-none bg-transparent px-4 py-1 text-gray-900 outline-none"
+                >
+                <button id="submit" class="m-2 rounded bg-purple-400 hover:bg-purple-600 px-2 py-2 text-white">🔍</button>
+            </div>
+            <!-- Weather Forecast Search Icon Ends Here  -->
+
+        <!--Cards-->
+        <div class=" flex items-center justify-evenly flex-wrap">
+
+            <!-- Temperature Card  -->
+            <div class="bg-white p-2 small:w-[200px] sm:w-[250px] md:w-[300px] h-[325px] mb-[25px] mt-[20px] 
+            ml-[60px] mr-[60px] rounded-3xl  transform transition-all hover:translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+                <img class="h-[195px] w-[246px] md:w-[295px] object-cover rounded-3xl flex items-center" src="/dist/Image/Temperature Card.jpg" alt="">
+                <div class="p-2">
+                    <h2 class="font-bold">Temperature is :- <span id="temp"></span>&#8451;</h2>
+                    <p class="text-gray-700 font-medium">Maximum Temperature is :- <span id="max_temp"></span>&#8451;</p>
+                    <p class="text-gray-700 font-medium">Minimum Temperature is :- <span id="min_temp"></span>&#8451;</p>
+                </div>
+            </div>
+
+            <!-- Humidity Card  -->
+            <div class="bg-white p-2 small:w-[200px] sm:w-[250px] md:w-[300px] h-[325px] mb-[25px] mt-[20px] 
+            ml-[60px] mr-[60px] rounded-3xl  transform transition-all hover:translate-y-2 duration-300 shadow-lg hover:shadow-2xl items-end">
+                <img class="h-[195px] w-[246px] md:w-[295px] object-cover rounded-3xl flex items-center" src="/dist/Image/Humidity Card.jpg" alt="">
+                <div class="p-2">
+                    <h2 class="font-bold">Humidity is <span id="humidity"></span>%</h2>
+                    <p class="text-gray-700 font-medium">Feels Like :- <span id="feels_like"></span></p>
+                </div>
+            </div>
+
+            <!-- Wind Card  -->
+            <div class="bg-white p-2 small:w-[200px] sm:w-[250px] md:w-[300px] h-[325px] mb-[20px] mt-[20px]  ml-[60px] mr-[60px] rounded-3xl  transform transition-all hover:translate-y-2 duration-300 shadow-lg hover:shadow-2xl">
+                <img class="h-[195px] w-[246px] md:w-[295px] object-cover rounded-3xl flex items-center" src="/dist/Image/Wind Card.jpg" alt="">
+                <div class="p-2">
+                    <h2 class="font-bold">Wind</h2>
+                    <p class="text-gray-700 font-medium">Wind Speed :- <span id="wind_speed"></span>  km/hr</p>
+                    <p class="text-gray-700 font-medium">Wind Degree :- <span id="wind_degrees"></span> </p>
+                </div>
+            </div>
+
+        </div>
+        <!-- Cards Section Ends Here  -->
+
+        <script src="script.js"></script>
+</body>    
+</html>
